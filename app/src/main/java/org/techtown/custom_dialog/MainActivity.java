@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Dialog custom_dialog;
 
@@ -27,10 +27,21 @@ public class MainActivity extends AppCompatActivity {
     public void onClickShowDialog(View view) {
         custom_dialog.show(); // 다이얼로그 띄우기
 
-        RadioButton rb_thin = findViewById(R.id.rb_thin); // rb_thin 버튼 찾아오기
-        RadioButton rb_middle = findViewById(R.id.rb_middle); // rb_middle 버튼 찾아오기
-        RadioButton rb_thick = findViewById(R.id.rb_thick); // rb_thick 버튼 찾아오기
+        }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.rb_thin: //가늘게 버튼을 눌렀을 때
+                Toast.makeText(getApplicationContext(), "press rb_thin", Toast.LENGTH_SHORT).show();
+                break;
 
-        // 라디오 버튼 누르면 자꾸 오류나서.. 내일..하겠슴둥...
+            case R.id.rb_middle: //중간 버튼을 눌렀을 때
+                Toast.makeText(getApplicationContext(), "press rb_middle", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rb_thick: //두껍게 버튼을 눌렀을 때
+                Toast.makeText(getApplicationContext(), "press rb_thick", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }
